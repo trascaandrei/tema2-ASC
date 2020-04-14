@@ -18,7 +18,7 @@ double* my_solver(int N, double *A, double *B) {
 
 	cblas_dtrmm(CblasRowMajor, CblasRight, CblasUpper, CblasNoTrans,
 	    CblasNonUnit, N, N, 1.0, A, N, A2, N);
-	cblas_dtrmm(CblasRowMajor, CblasRight, CblasUpper, CblasTrans,
+	cblas_dtrmm(CblasRowMajor, CblasRight, CblasUpper, CblasNoTrans,
     	    CblasNonUnit, N, N, 1.0, A2, N, B, N);
 	cblas_dtrmm(CblasRowMajor, CblasRight, CblasUpper, CblasTrans,
     	    CblasNonUnit, N, N, 1.0, A, N, B2, N);
