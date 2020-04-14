@@ -2,8 +2,8 @@ CC=gcc
 CFLAGS=-Wall -Werror -O0
 OPT_CFLAGS=-Wall -Werror -O3
 EXTRA_OPT_CFLAGS=
-LIBDIRS=
-LIBS=
+LIBDIRS=/usr/lib64/atlas
+LIBS=lsatlas.so.3.10
 
 all: compare tema2_blas tema2_neopt tema2_opt_m tema2_opt_f tema2_opt_f_extra
 
@@ -26,4 +26,4 @@ compare: compare.c utils.h
 	$(CC) $(OPT_CFLAGS) $^ -lm -o $@
 
 clean:
-	rm -rf compare tema2_blas tema2_neopt tema2_opt_m tema2_opt_f tema2_opt_f_extra
+	rm -rf compare tema2_blas tema2_neopt tema2_opt_m tema2_opt_f tema2_opt_f_extra tema2_blas.*
