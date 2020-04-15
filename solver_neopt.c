@@ -58,7 +58,7 @@ double* my_solver(int N, double *A, double* B) {
 
     multiplyMatrix(N, A, A, AA, SUPERIOR);
     multiplyMatrix(N, AA, B, AAB, SUPERIOR);
-    multiplyMatrix(N, B, At, BAt, INFERIOR);
+    multiplyMatrix(N, B, At, BAt, NON_TRIANGULAR);
 
 	for (i = 0; i < N; i++) {
         for (j = 0 ; j < N; j++) {
