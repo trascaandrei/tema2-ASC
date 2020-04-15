@@ -22,7 +22,7 @@
 
  	for (i = 0; i < N; i++) {
  	    for (j = 0; j < N; j++) {
- 	        ij = getIndex(i, j);
+ 	        ij = getIndex(i, j, N);
 
  	        if (sup_inf == SUPERIOR) {
                 if (j < i) {
