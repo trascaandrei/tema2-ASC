@@ -45,10 +45,10 @@
 
 double* my_solver(int N, double *A, double* B) {
     int i, j;
-    double AA = malloc(N * N * sizeof(double));
-    double AAB = malloc(N * N * sizeof(double));
-    double BAt = malloc(N * N * sizeof(double));
-    double At = malloc(N * N * sizeof(double));
+    double *AA = malloc(N * N * sizeof(double));
+    double *AAB = malloc(N * N * sizeof(double));
+    double *BAt = malloc(N * N * sizeof(double));
+    double *At = malloc(N * N * sizeof(double));
 
     for (i = 0; i < N; i++) {
         for (j = 0; j < N; j++) {
