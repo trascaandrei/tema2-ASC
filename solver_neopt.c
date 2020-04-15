@@ -17,7 +17,7 @@
 
  void multiplyMatrix(int N, double *A, double *B, double *C, int sup_inf) {
     int ij;
-    int start;
+    int start = 0;
     int i, j, k;
 
  	for (i = 0; i < N; i++) {
