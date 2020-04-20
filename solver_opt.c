@@ -18,7 +18,7 @@ int getIndex(int i, int j, int N) {
 
 void multiplyMatrix2(int N, double* a, double* b, double* c, int sup_inf) {
     int bi, bj, bk;
-	int I, J, K;
+	int i, j, k;
 	double *cPtr, *aPtr, *bPtr;
 
 	for(bi = 0; bi < N; bi += BLOCK_SIZE) {
