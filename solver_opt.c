@@ -16,24 +16,37 @@ int getIndex(int i, int j, int N) {
 	return N * i + j;
  }
 
-void multiplyMatrix2(int N, double* a, double* b, double* c, int sup_inf) {
+void multiplyMatrix2(int N, double* A, double* B, double* C, int sup_inf) {
     int bi, bj, bk;
 	int i, j, k;
 	double *cPtr, *aPtr, *bPtr;
+	int start;
 
 	for(bi = 0; bi < N; bi += BLOCK_SIZE) {
 		for(bj = 0; bj < N; bj += BLOCK_SIZE) {
 			for(bk = 0; bk < N; bk += BLOCK_SIZE) {
 				for(i = 0; i < BLOCK_SIZE; i++) {
-					aPtr = a + (bi + i) * N + bk;
-					cPtr = c + (bi + i) * N + bj;
+					aPtr = A + (bi + i) * N + bk;
+					cPtr = C + (bi + i) * N + bj;
 
 					for(j = 0; j < BLOCK_SIZE; j++) {
-						bPtr = b + bj + j + bk * N;
+						bPtr = B + bj + j + bk * N;
 
 						register double sum = 0;
 
-						for(k = 0; k != BLOCK_SIZE; k++) {
+						if (sup_inf == SUPERIOR) {
+                            if (j < i) {
+                        		 start = i;
+                        	}
+                        } else if (sup_inf == INFERIOR) {
+                        	if (j > i) {
+                        		start = j;
+                        	}
+                        } else {
+                        	start = 0;
+                        }
+
+						for(k = start; k != BLOCK_SIZE; k++) {
 					         sum += (*aPtr) * (*bPtr);
 							 aPtr++;
 							 bPtr += N;
@@ -90,8 +103,8 @@ double* my_solver(int N, double *A, double* B) {
 	}
 
 	multiplyMatrix2(N, A, A, AA, SUPERIOR);
-	//multiplyMatrix2(N, AA, B, AAB, SUPERIOR);
-	//multiplyMatrix2(N, B, At, BAt, NON_TRIANGULAR);
+	multiplyMatrix(N, AA, B, AAB, SUPERIOR);
+	multiplyMatrix(N, B, At, BAt, NON_TRIANGULAR);
 
 	for (i = 0; i < N; i++) {
 		for (j = 0 ; j < N; j++) {
