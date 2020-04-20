@@ -34,7 +34,7 @@ void multiplyMatrix2(int N, double* a, double* b, double* c, int sup_inf) {
 						register double sum = 0;
 
 						for(k = 0; k != BLOCK_SIZE; ++k, ++aPtr, bPtr += N) {
-							sum += *aPtr * *bPtr;
+							sum += *aPtr * b[getIndex(bj + j, bk + k, N)];
 						}
 
 						*cPtr = sum;
