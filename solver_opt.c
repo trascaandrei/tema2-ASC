@@ -103,8 +103,8 @@ double* my_solver(int N, double *A, double* B) {
 	}
 
 	multiplyMatrix2(N, A, A, AA, SUPERIOR);
-	multiplyMatrix(N, AA, B, AAB, SUPERIOR);
-	multiplyMatrix(N, B, At, BAt, NON_TRIANGULAR);
+	multiplyMatrix2(N, AA, B, AAB, SUPERIOR);
+	multiplyMatrix2(N, B, At, BAt, NON_TRIANGULAR);
 
 	for (i = 0; i < N; i++) {
 		for (j = 0 ; j < N; j++) {
