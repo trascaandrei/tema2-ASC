@@ -96,8 +96,5 @@ double* my_solver(int N, double *A, double* B) {
 		}
 	}
 
-	free(AA);
-	free(AAB);
-	free(At);
 	return BAt;
 }
