@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-Wall -Werror -O0
 OPT_CFLAGS=-Wall -Werror -O3
-EXTRA_OPT_CFLAGS=-funroll-loops -ffast-math -march=native
+EXTRA_OPT_CFLAGS=-funroll-loops -ffast-math -mfpmath=sse
 LIBDIRS=-L /usr/lib64/atlas
 LIBS=-l :libsatlas.so.3.10
 
