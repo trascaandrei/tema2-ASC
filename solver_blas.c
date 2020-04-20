@@ -28,5 +28,6 @@ double* my_solver(int N, double *A, double *B) {
 	        B2[i * N + j] += B[i * N + j];
 	    }
 	}
+	free(A2);
 	return B2;
 }

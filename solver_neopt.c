@@ -65,5 +65,9 @@ double* my_solver(int N, double *A, double* B) {
     	    BAt[i * N + j] += AAB[i * N + j];
     	}
     }
+
+    free(AA);
+    free(AAB);
+    free(At);
 	return BAt;
 }
