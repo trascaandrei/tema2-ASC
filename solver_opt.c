@@ -31,7 +31,7 @@ void multiplyMatrix2(int N, double* a, double* b, double* c, int sup_inf) {
 					for(j = 0; j != BLOCK_SIZE; ++j, ++cPtr) {
 						bPtr = b + bj + j + bk * N;
 
-						register double sum;
+						register double sum = 0;
 
 						for(k = 0; k != BLOCK_SIZE; ++k, ++aPtr, bPtr += N) {
 							sum += *aPtr * *bPtr;
