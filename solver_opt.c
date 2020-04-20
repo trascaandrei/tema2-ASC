@@ -91,10 +91,10 @@ void multiplyMatrix(int N, double *A, double *B, double *C, int sup_inf) {
 
 double* my_solver(int N, double *A, double* B) {
 	int i, j;
-	double *AA = calloc(N * N, sizeof(*AA));
-	double *AAB = calloc(N * N, sizeof(*AAB));
-	double *BAt = calloc(N * N, sizeof(*BAt));
-	double *At = calloc(N * N, sizeof(*At));
+	double *AA = malloc(N * N * sizeof(*AA));
+	double *AAB = malloc(N * N * sizeof(*AAB));
+	double *BAt = malloc(N * N * sizeof(*BAt));
+	double *At = malloc(N * N * sizeof(*At));
 
 	for (i = 0; i < N; i++) {
 		for (j = 0; j < N; j++) {
