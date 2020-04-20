@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-Wall -Werror -O0
 OPT_CFLAGS=-Wall -Werror -O3
-EXTRA_OPT_CFLAGS=-funroll-loops -ffast-math -ira-max-loops-num -ira-max-conflict-table-size -ira-loop-reserved-regs --fira-loop-pressure
+EXTRA_OPT_CFLAGS=-funroll-loops -ffast-math
 LIBDIRS=-L /usr/lib64/atlas
 LIBS=-l :libsatlas.so.3.10
 
