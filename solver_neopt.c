@@ -11,10 +11,13 @@
  #define SUPERIOR       1
  #define INFERIOR       0
 
+// indexul de pe linia i si coloana j a unei matrici liniarizate
+// de dimensiune N * N
  int getIndex(int i, int j, int N) {
     return N * i + j;
  }
 
+// C = A * B
  void multiplyMatrix(int N, double *A, double *B, double *C, int sup_inf) {
     int ij;
     int start = 0;
@@ -50,6 +53,7 @@ double* my_solver(int N, double *A, double* B) {
     double *BAt = malloc(N * N * sizeof(double));
     double *At = malloc(N * N * sizeof(double));
 
+    // transpunem A
     for (i = 0; i < N; i++) {
         for (j = 0; j < N; j++) {
             At[getIndex(i, j, N)] = A[getIndex(j, i, N)];

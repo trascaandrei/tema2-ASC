@@ -10,7 +10,7 @@
 #define NON_TRIANGULAR -1
 #define SUPERIOR       1
 #define INFERIOR       0
-#define BLOCK_SIZE	   40
+#define BLOCK_SIZE	   64
 
 int getIndex(int i, int j, int N) {
 	return N * i + j;
